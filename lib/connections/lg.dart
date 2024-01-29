@@ -33,4 +33,37 @@ class LGConnection {
       return false;
     }
   }
+
+  searchPlace(String placeName) async {
+    try {
+      connectToLG();
+      final execResult =
+          await _client?.execute('echo "search=$placeName" >/tmp/query.txt');
+      return execResult;
+    } catch (e) {
+      print('An error occurred while executing the command: $e');
+      return null;
+    }
+  }
+
+  Future<String> get _localPath async {
+    final directory = await getApplicationDocumentsDirectory();
+
+    return directory.path;
+  }
+
+  rebootLG() async {
+    try {
+      connectToLG();
+
+      for (int i = int.parse(_numberOfRigs); i > 0; i--) {
+        await _client!.execute(
+            'sshpass -p $_passwordOrKey ssh -t lg$i "echo $_passwordOrKey | sudo -S reboot"');
+      }
+      return null;
+    } catch (e) {
+      print("An error occurred while executing the command: $e");
+      return null;
+    }
+  }
 }
