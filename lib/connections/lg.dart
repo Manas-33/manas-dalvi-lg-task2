@@ -66,4 +66,51 @@ class LGConnection {
       return null;
     }
   }
+
+  buildOrbit(String content) async {
+    String localPath = await _localPath;
+    File localFile = File('$localPath/Orbit.kml');
+    localFile.writeAsString(content);
+
+    String filePath = '$localPath/Orbit.kml';
+    try {
+      var sftp = await _client?.sftp();
+      await sftp?.open('/var/www/html/$filePath',
+          mode: SftpFileOpenMode.create |
+              SftpFileOpenMode.truncate |
+              SftpFileOpenMode.write);
+      return await _client!.execute(
+          "echo '\nhttp://lg1:81/Orbit.kml' >> /var/www/html/kmls.txt");
+    } catch (e) {
+      print('Could not connect to host LG');
+      return Future.error(e);
+    }
+  }
+
+  startOrbit() async {
+    try {
+      return await _client!.execute('echo "playtour=Orbit" > /tmp/query.txt');
+    } catch (e) {
+      print('Could not connect to host LG');
+      return Future.error(e);
+    }
+  }
+
+  stopOrbit() async {
+    try {
+      return await _client!.execute('echo "exittour=true" > /tmp/query.txt');
+    } catch (e) {
+      print('Could not connect to host LG');
+      return Future.error(e);
+    }
+  }
+
+  cleanOrbit() async {
+    try {
+      return await _client!.execute('echo "" > /tmp/query.txt');
+    } catch (e) {
+      print('Could not connect to host LG');
+      return Future.error(e);
+    }
+  }
 }
