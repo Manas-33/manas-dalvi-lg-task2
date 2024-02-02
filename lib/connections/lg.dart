@@ -71,18 +71,14 @@ class LGConnection {
     String localPath = await _localPath;
     File localFile = File('$localPath/Orbit.kml');
     localFile.writeAsString(content);
-
-    String filePath = '$localPath/Orbit.kml';
     try {
-      var sftp = await _client?.sftp();
-      await sftp?.open('/var/www/html/$filePath',
-          mode: SftpFileOpenMode.create |
-              SftpFileOpenMode.truncate |
-              SftpFileOpenMode.write);
-      return await _client!.execute(
+      connectToLG();
+      await _client?.run("echo '$content' > /var/www/html/Orbit.kml");
+      await _client!.execute(
           "echo '\nhttp://lg1:81/Orbit.kml' >> /var/www/html/kmls.txt");
+      return await _client!.execute('echo "playtour=Orbit" > /tmp/query.txt');
     } catch (e) {
-      print('Could not connect to host LG');
+      print('Error in building orbit');
       return Future.error(e);
     }
   }
