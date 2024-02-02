@@ -237,12 +237,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                     )),
                 Bounceable(
-                    onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => Earthquake1906(),
-                      //     ));
+                    onTap: () async {
+                      await lg.openBalloon(
+                          "Pune", "Pune", "Manas", 240, "description");
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width * .4,

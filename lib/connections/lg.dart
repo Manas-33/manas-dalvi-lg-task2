@@ -109,4 +109,73 @@ class LGConnection {
       return Future.error(e);
     }
   }
+
+  openBalloon(
+    String name,
+    String track,
+    String time,
+    int height,
+    String description,
+  ) async {
+    int rigs = (int.parse(_numberOfRigs) / 2).floor() + 1;
+    String openBalloonKML = '''
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>$name.kml</name>
+	<Style id="purple_paddle">
+		<BalloonStyle>
+			<text>\$[description]</text>
+      <bgColor>4169E11e</bgColor>
+		</BalloonStyle>
+	</Style>
+	<Placemark id="0A7ACC68BF23CB81B354">
+		<name>$track</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<!-- BalloonStyle background color:
+ffffffff
+ -->
+<table width="400" border="0" cellspacing="0" cellpadding="5">
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://myapp33bucket.s3.amazonaws.com/logoo.png" alt="picture" width="150" height="150" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <h2><font color='#00CC99'>$track</font></h2>
+      <h3><font color='#00CC99'>$time</font></h3>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <p><font color="#3399CC">$description</font></p>
+    </td>
+  </tr>
+</table>]]></description>
+		<LookAt>
+			<longitude>73.8567</longitude>
+			<latitude>18.5204</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>24000</range>
+		</LookAt>
+		<styleUrl>#purple_paddle</styleUrl>
+		<gx:balloonVisibility>1</gx:balloonVisibility>
+		<Point>
+			<coordinates>73.8567,18.5204,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>
+''';
+    try {
+      connectToLG();
+      return await _client!.execute(
+          "echo '$openBalloonKML' > /var/www/html/kml/slave_$rigs.kml");
+    } catch (e) {
+      return Future.error(e);
+    }
+  }
 }
