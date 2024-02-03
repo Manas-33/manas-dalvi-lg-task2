@@ -31,12 +31,13 @@ class _MyAppState extends State<MyApp> {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: AnimatedSplashScreen(
           nextScreen: HomePage(),
           splash: Column(
             children: [
               Image.asset(
-                'assets/images/image.png',
+                'assets/images/logo.png',
                 scale: 3,
               ),
               SizedBox(
