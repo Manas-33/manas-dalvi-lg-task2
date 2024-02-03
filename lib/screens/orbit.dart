@@ -4,9 +4,9 @@ class Orbit {
     int orbit = 0;
     String content = '';
     String range = '40000';
-    double latvalue = 18.5204;
-    double longvalue = 73.8567;
-
+    double latvalue = 18.956721869849535;
+    double longvalue = 72.81555865828552;
+// 18.956721869849535, 72.81555865828552
     while (orbit <= 36) {
       if (heading >= 360) heading -= 360;
       content += '''

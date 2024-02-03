@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: AnimatedSplashScreen(
+          backgroundColor: Color.fromARGB(255, 0, 25, 69),
           nextScreen: HomePage(),
           splash: Column(
             children: [
@@ -47,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                 "Liquid Galaxy Controller",
                 style: GoogleFonts.openSans(
                   textStyle: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     letterSpacing: .5,
                     fontSize: 36,
                     fontWeight: FontWeight.w500,

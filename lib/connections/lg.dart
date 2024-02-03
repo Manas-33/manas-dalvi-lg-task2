@@ -143,8 +143,8 @@ ffffffff
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <h2><font color='#00CC99'>$track</font></h2>
-      <h3><font color='#00CC99'>$time</font></h3>
+      <h1><font color='#00CC99'>$track</font></h1>
+      <h1><font color='#00CC99'>$time</font></h1>
     </td>
   </tr>
   <tr>
@@ -154,8 +154,8 @@ ffffffff
   </tr>
 </table>]]></description>
 		<LookAt>
-			<longitude>73.8567</longitude>
-			<latitude>18.5204</latitude>
+			<longitude>72.81555865828552</longitude>
+			<latitude>18.956721869849535</latitude>
 			<altitude>0</altitude>
 			<heading>0</heading>
 			<tilt>0</tilt>
@@ -164,7 +164,7 @@ ffffffff
 		<styleUrl>#purple_paddle</styleUrl>
 		<gx:balloonVisibility>1</gx:balloonVisibility>
 		<Point>
-			<coordinates>73.8567,18.5204,0</coordinates>
+			<coordinates>72.81555865828552,18.956721869849535,0</coordinates>
 		</Point>
 	</Placemark>
 </Document>

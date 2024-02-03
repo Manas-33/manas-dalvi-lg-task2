@@ -116,15 +116,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   AwesomeDialog(
                     context: context,
                     animType: AnimType.scale,
-                    dialogType: DialogType.success,
+                    dialogType: DialogType.info,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
-                        Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: ConnectionFlag(
-                              status: connectionStatus,
-                            )),
                         TextField(
                           controller: _ipController,
                           decoration: const InputDecoration(
@@ -706,7 +701,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           overflow: TextOverflow.clip,
                                           color: Colors.black87,
                                           letterSpacing: .5,
-                                          fontSize: 4.sp,
+                                          fontSize: 5.sp,
                                           fontWeight: FontWeight.w500,
                                         )),
                                       ),
@@ -721,7 +716,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ),
                     Bounceable(
                       onTap: () async {
-                        await lg.searchPlace("Pune");
+                        await lg.searchPlace("Mumbai");
                       },
                       child: Card(
                         clipBehavior: Clip.antiAlias,
@@ -801,7 +796,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           overflow: TextOverflow.clip,
                                           color: Colors.black87,
                                           letterSpacing: .5,
-                                          fontSize: 4.sp,
+                                          fontSize: 5.sp,
                                           fontWeight: FontWeight.w500,
                                         )),
                                       ),
@@ -909,7 +904,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           overflow: TextOverflow.clip,
                                           color: Colors.black87,
                                           letterSpacing: .5,
-                                          fontSize: 4.sp,
+                                          fontSize: 5.sp,
                                           fontWeight: FontWeight.w500,
                                         )),
                                       ),
@@ -925,7 +920,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Bounceable(
                       onTap: () async {
                         await lg.openBalloon(
-                            "Pune", "Pune", "Manas", 240, "description");
+                            "Mumbai",
+                            "Mumbai",
+                            "- Manas Dalvi",
+                            240,
+                            "Mumbai is the financial, commercial, and entertainment capital of India. It is also one of the world's top ten centers of commerce in terms of global financial flow. Mumbai is located on the west coast of India, and it is the country's most populous city. Mumbai is known for its film production, and it is also home to the Hindi film industry, known as Bollywood.");
                       },
                       child: Card(
                         clipBehavior: Clip.antiAlias,
@@ -1005,7 +1004,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           overflow: TextOverflow.clip,
                                           color: Colors.black87,
                                           letterSpacing: .5,
-                                          fontSize: 4.sp,
+                                          fontSize: 5.sp,
                                           fontWeight: FontWeight.w500,
                                         )),
                                       ),
@@ -1026,15 +1025,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 // SizedBox(
                 //   height: 10.h,
                 // ),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SettingsPage(),
-                          ));
-                    },
-                    child: Text("Hello")),
+                // ElevatedButton(
+                //     onPressed: () {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //             builder: (context) => SettingsPage(),
+                //           ));
+                //     },
+                //     child: Text("Hello")),
               ]),
             ),
             // color: Colors.red,
