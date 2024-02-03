@@ -320,20 +320,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           color: Color.fromARGB(255, 0, 25, 69),
           padding: const EdgeInsets.all(40.0),
           child: Container(
-            // alignment: Alignment.center,
             padding: EdgeInsets.only(left: 30, bottom: 30, right: 30),
-            // decoration: BoxDecoration(
-            // color: Colors.grey,
-            //     borderRadius: BorderRadius.circular(50)),
+
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: FadeInUp(
               duration: Duration(milliseconds: 500),
               child:
                   Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                // SizedBox(
-                //   height: 50,
-                // ),
                 Image.asset(
                   "assets/images/logo1.png",
                   scale: 3,
@@ -341,265 +335,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 SizedBox(
                   height: 50,
                 ),
-
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     Bounceable(
-                //         onTap: () async {
-                //           AwesomeDialog(
-                //             context: context,
-                //             dialogType: DialogType.warning,
-                //             headerAnimationLoop: false,
-                //             animType: AnimType.bottomSlide,
-                //             title: 'Do you want to reboot the LG rig?',
-                //             desc:
-                //                 'This will switch off the current session of the rig and reboot the machine',
-                //             buttonsTextStyle:
-                //                 const TextStyle(color: Colors.white),
-                //             showCloseIcon: true,
-                //             btnCancelOnPress: () {},
-                //             btnOkOnPress: () async {
-                //               await lg.rebootLG();
-                //               // Navigator.push(context, MaterialPageRoute(builder: (BuildContext ctxt) => InfoScreen()));
-                //             },
-                //           ).show();
-                //         },
-                //         child: Container(
-                //           width: MediaQuery.of(context).size.width * .4,
-                //           height: 150.h,
-                //           decoration: BoxDecoration(
-                //               gradient: LinearGradient(
-                //                 begin: Alignment.centerLeft,
-                //                 end: Alignment.centerRight,
-                //                 colors: [
-                //                   Colors.green.withOpacity(0.75),
-                //                   Colors.blue.withOpacity(0.75),
-                //                   // Colors.blue
-                //                 ],
-                //               ),
-                //               borderRadius: BorderRadius.circular(12)),
-                //           child: Row(
-                //             mainAxisAlignment: MainAxisAlignment.start,
-                //             children: [
-                //               SizedBox(
-                //                 width: 20,
-                //               ),
-                //               // Image.asset(
-                //               //   "assets/images/realtime.png",
-                //               //   // color: Colors.white,
-                //               //   height: 50,
-                //               //   width: 50,
-                //               // ),
-                //               SizedBox(
-                //                 width: 15,
-                //               ),
-                //               Text(
-                //                 "Reboot LG",
-                //                 style: GoogleFonts.openSans(
-                //                   textStyle: TextStyle(
-                //                     color: Colors.white,
-                //                     letterSpacing: .5,
-                //                     fontSize: 8.sp,
-                //                     fontWeight: FontWeight.w600,
-                //                   ),
-                //                 ),
-                //               ),
-                //               SizedBox(
-                //                 width: 15,
-                //               )
-                //             ],
-                //           ),
-                //         )),
-                //     Bounceable(
-                //         onTap: () async {
-                //           await lg.searchPlace("Pune");
-                //         },
-                //         child: Container(
-                //           width: MediaQuery.of(context).size.width * .4,
-                //           height: 150.h,
-                //           decoration: BoxDecoration(
-                //               gradient: LinearGradient(
-                //                 begin: Alignment.centerLeft,
-                //                 end: Alignment.centerRight,
-                //                 colors: [
-                //                   Colors.green.withOpacity(0.75),
-                //                   Colors.blue.withOpacity(0.75),
-                //                   // Colors.blue
-                //                 ],
-                //               ),
-                //               borderRadius: BorderRadius.circular(12)),
-                //           child: Row(
-                //             mainAxisAlignment: MainAxisAlignment.start,
-                //             children: [
-                //               // SvgPicture.asset(
-                //               //   "assets/images/realtime2.svg",
-                //               //   color: Colors.white,
-                //               //   height: 50,
-                //               //   width: 50,
-                //               // ),
-                //               SizedBox(
-                //                 width: 20,
-                //               ),
-                //               // Image.asset(
-                //               //   "assets/images/calendar.png",
-                //               //   // color: Colors.white,
-                //               //   height: 50,
-                //               //   width: 50,
-                //               // ),
-                //               SizedBox(
-                //                 width: 15,
-                //               ),
-                //               Text(
-                //                 "Move to City",
-                //                 style: GoogleFonts.openSans(
-                //                   textStyle: TextStyle(
-                //                     color: Colors.white,
-                //                     letterSpacing: .5,
-                //                     fontSize: 8.sp,
-                //                     fontWeight: FontWeight.w700,
-                //                   ),
-                //                 ),
-                //               ),
-                //               SizedBox(
-                //                 width: 15,
-                //               )
-                //             ],
-                //           ),
-                //         )),
-                //   ],
-                // ),
-                // SizedBox(
-                //   height: 20.h,
-                // ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     Bounceable(
-                //         onTap: () async {
-                //           await lg
-                //               .buildOrbit(
-                //                   Orbit.buildOrbit(Orbit.generateOrbitTag()))
-                //               .then((value) async {
-                //             // await LGConnection().startOrbit();
-                //           });
-                //         },
-                //         child: Container(
-                //           width: MediaQuery.of(context).size.width * .4,
-                //           height: 150.h,
-                //           decoration: BoxDecoration(
-                //               gradient: LinearGradient(
-                //                 begin: Alignment.centerLeft,
-                //                 end: Alignment.centerRight,
-                //                 colors: [
-                //                   Colors.green.withOpacity(0.75),
-                //                   Colors.blue.withOpacity(0.75),
-                //                   // Colors.blue
-                //                 ],
-                //               ),
-                //               borderRadius: BorderRadius.circular(12)),
-                //           child: Row(
-                //             mainAxisAlignment: MainAxisAlignment.start,
-                //             children: [
-                //               SizedBox(
-                //                 width: 20,
-                //               ),
-                //               // Image.asset(
-                //               //   "assets/images/earthquake2.png",
-                //               //   // color: Colors.white,
-                //               //   height: 50,
-                //               //   width: 50,
-                //               // ),
-                //               SizedBox(
-                //                 width: 15,
-                //               ),
-                //               Flexible(
-                //                 child: Text(
-                //                   "Orbit",
-                //                   style: GoogleFonts.openSans(
-                //                     textStyle: TextStyle(
-                //                       color: Colors.white,
-                //                       letterSpacing: .5,
-                //                       fontSize: 8.sp,
-                //                       fontWeight: FontWeight.w600,
-                //                     ),
-                //                   ),
-                //                 ),
-                //               ),
-                //               SizedBox(
-                //                 width: 15,
-                //               )
-                //             ],
-                //           ),
-                //         )),
-                //     Bounceable(
-                //         onTap: () async {
-                //           await lg.openBalloon(
-                //               "Pune", "Pune", "Manas", 240, "description");
-                //         },
-                //         child: Container(
-                //           width: MediaQuery.of(context).size.width * .4,
-                //           height: 150.h,
-                //           decoration: BoxDecoration(
-                //               gradient: LinearGradient(
-                //                 begin: Alignment.centerLeft,
-                //                 end: Alignment.centerRight,
-                //                 colors: [
-                //                   Colors.green.withOpacity(0.75),
-                //                   Colors.blue.withOpacity(0.75),
-                //                   // Colors.blue
-                //                 ],
-                //               ),
-                //               borderRadius: BorderRadius.circular(12)),
-                //           child: Row(
-                //             mainAxisAlignment: MainAxisAlignment.start,
-                //             children: [
-                //               SizedBox(
-                //                 width: 20,
-                //               ),
-                //               // Image.asset(
-                //               //   "assets/images/earthquake.png",
-                //               //   // color: Colors.white,
-                //               //   height: 50,
-                //               //   width: 50,
-                //               // ),
-                //               SizedBox(
-                //                 width: 15,
-                //               ),
-                //               Flexible(
-                //                 child: Text(
-                //                   "Open Bubble",
-                //                   style: GoogleFonts.openSans(
-                //                     textStyle: TextStyle(
-                //                       overflow: TextOverflow.clip,
-                //                       color: Colors.white,
-                //                       letterSpacing: .5,
-                //                       fontSize: 8.sp,
-                //                       fontWeight: FontWeight.w600,
-                //                     ),
-                //                   ),
-                //                 ),
-                //               ),
-                //               SizedBox(
-                //                 width: 15,
-                //               )
-                //             ],
-                //           ),
-                //         )),
-                //   ],
-                // ),
-                // SizedBox(
-                //   height: 20.h,
-                // ),
-                // Container(
-                //   width: MediaQuery.of(context).size.width * .25,
-                //   height: 50,
-                //   decoration: BoxDecoration(
-                //       color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-                //   child: GestureDetector(
-                //       onTap: () {}, child: Center(child: Text("Visualize it!"))),
-                // ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -635,7 +370,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color(0XFF99DCBD),
+                              color: Color.fromARGB(255, 108, 225, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),
@@ -664,6 +399,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       height: 50.w,
                                       width: 40.h,
                                       alignment: Alignment.centerRight,
+                                      color: Color.fromARGB(255, 14, 67, 110),
                                     )),
                               ),
                               Align(
@@ -686,7 +422,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           style: GoogleFonts.openSans(
                                               textStyle: TextStyle(
                                             overflow: TextOverflow.clip,
-                                            color: Color(0XFF1D5C41),
+                                            color: Color.fromARGB(
+                                                255, 14, 67, 110),
                                             letterSpacing: .5,
                                             fontSize: 8.sp,
                                             fontWeight: FontWeight.w600,
@@ -730,7 +467,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color(0XFF99DCBD),
+                              color: Color.fromARGB(255, 108, 225, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),
@@ -781,7 +518,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           style: GoogleFonts.openSans(
                                               textStyle: TextStyle(
                                             overflow: TextOverflow.clip,
-                                            color: Color(0XFF1D5C41),
+                                            color: Color.fromARGB(
+                                                255, 14, 67, 110),
                                             letterSpacing: .5,
                                             fontSize: 8.sp,
                                             fontWeight: FontWeight.w600,
@@ -838,7 +576,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color(0XFF99DCBD),
+                              color: Color.fromARGB(255, 108, 225, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),
@@ -867,6 +605,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       height: 50.w,
                                       width: 40.h,
                                       alignment: Alignment.centerRight,
+                                      color: Color.fromARGB(255, 14, 67, 110),
                                     )),
                               ),
                               Align(
@@ -889,7 +628,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           style: GoogleFonts.openSans(
                                               textStyle: TextStyle(
                                             overflow: TextOverflow.clip,
-                                            color: Color(0XFF1D5C41),
+                                            color: Color.fromARGB(
+                                                255, 14, 67, 110),
                                             letterSpacing: .5,
                                             fontSize: 8.sp,
                                             fontWeight: FontWeight.w600,
@@ -938,7 +678,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color(0XFF99DCBD),
+                              color: Color.fromARGB(255, 108, 225, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),
@@ -989,7 +729,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           style: GoogleFonts.openSans(
                                               textStyle: TextStyle(
                                             overflow: TextOverflow.clip,
-                                            color: Color(0XFF1D5C41),
+                                            color: Color.fromARGB(
+                                                255, 14, 67, 110),
                                             letterSpacing: .5,
                                             fontSize: 8.sp,
                                             fontWeight: FontWeight.w600,
@@ -1022,18 +763,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 SizedBox(
                   height: 20.h,
                 ),
-                // SizedBox(
-                //   height: 10.h,
-                // ),
-                // ElevatedButton(
-                //     onPressed: () {
-                //       Navigator.push(
-                //           context,
-                //           MaterialPageRoute(
-                //             builder: (context) => SettingsPage(),
-                //           ));
-                //     },
-                //     child: Text("Hello")),
               ]),
             ),
             // color: Colors.red,
