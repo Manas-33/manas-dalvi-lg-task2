@@ -179,8 +179,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                         TextButton(
                           style: const ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.green),
+                            backgroundColor: MaterialStatePropertyAll(
+                                Color.fromARGB(255, 14, 67, 110)),
                             shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
@@ -203,17 +203,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 context,
                                 length: ToastLength.medium,
                                 expandedHeight: 100,
-                                message: "This is a success toast 🥂!",
+                                message: "It was a success🥂!",
                               );
                               print('Connected to LG successfully');
-                            } else if (result == false || result == null) {
-                              ToastService.showSuccessToast(
-                                context,
-                                length: ToastLength.medium,
-                                expandedHeight: 100,
-                                message: "This is a warning toast!",
-                              );
-                            }
+                            } else if (result == false || result == null) {}
                           },
                           child: const Padding(
                             padding: EdgeInsets.all(8.0),
@@ -246,8 +239,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                         TextButton(
                           style: const ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.green),
+                            backgroundColor: MaterialStatePropertyAll(
+                                Color.fromARGB(255, 14, 67, 110)),
                             shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
@@ -370,7 +363,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 108, 225, 233),
+                              color: Color.fromARGB(255, 108, 191, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),
@@ -467,7 +460,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 108, 225, 233),
+                              color: Color.fromARGB(255, 108, 191, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),
@@ -576,7 +569,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 108, 225, 233),
+                              color: Color.fromARGB(255, 108, 191, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),
@@ -678,7 +671,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           height: 55.w,
                           width: MediaQuery.of(context).size.width * .4,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 108, 225, 233),
+                              color: Color.fromARGB(255, 108, 191, 233),
                               borderRadius: BorderRadius.circular(
                                 12.h,
                               )),

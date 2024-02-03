@@ -184,7 +184,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       context,
                       length: ToastLength.medium,
                       expandedHeight: 100,
-                      message: "This is a success toast 🥂!",
+                      message: "It was a success🥂!",
                     );
                     print('Connected to LG successfully');
                   } else if (result == false || result == null) {
@@ -192,7 +192,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       context,
                       length: ToastLength.medium,
                       expandedHeight: 100,
-                      message: "This is a warning toast!",
+                      message: "There was an error!",
                     );
                   }
                 },
